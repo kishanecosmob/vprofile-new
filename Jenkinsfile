@@ -41,8 +41,8 @@ pipeline {
             }
             steps {
                withSonarQubeEnv('sonar') {
-                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=new-vprofile \
-                   -Dsonar.projectName=new-vprofile \
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=new-cicd \
+                   -Dsonar.projectName=new-cicd \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
                    -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
@@ -59,7 +59,7 @@ pipeline {
                   nexusVersion: 'nexus3',
                   protocol: 'http',
                   nexusUrl: '172.16.16.116:8081',
-                  groupId: 'QA',
+                  groupId: 'Admin',
                   version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
                   repository: 'vprofile-repo',
                   credentialsId: 'nexuslogin',
