@@ -41,8 +41,8 @@ pipeline {
             }
             steps {
                withSonarQubeEnv('sonar') {
-                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=new-cicd \
-                   -Dsonar.projectName=new-cicd \
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=new-vprofile \
+                   -Dsonar.projectName=new-vprofile \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
                    -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
