@@ -61,7 +61,7 @@ pipeline {
                   nexusUrl: '172.16.16.116:8081',
                   groupId: 'Admin',
                   version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
-                  repository: 'vprofile-repo',
+                  repository: 'new-cicd',
                   credentialsId: 'nexuslogin',
                   artifacts: [
                     [artifactId: 'vproapp',
